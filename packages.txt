@@ -1,4 +1,0 @@
-python3-dev
-build-essential
-cmake
-libpq-dev
