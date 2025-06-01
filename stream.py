@@ -1,13 +1,15 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from tensorflow.keras.models import load_model
+import tensorflow as tf  
 import pickle
+
+model = tf.keras.models.load_model('model.h5')
 
 # Load the model and encoders
 @st.cache_resource
 def load_models():
-    model = load_model('model.h5')
+    
     with open('gender_encoder.pkl', 'rb') as f:
         gender_encoder = pickle.load(f)
     with open('one_geo.pkl', 'rb') as f:
